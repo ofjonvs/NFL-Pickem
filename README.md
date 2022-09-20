@@ -1,6 +1,6 @@
 # NFL-Pickem
 
-NFL pickem program that uses google sheets and text files to track weekly picks
+NFL pickem program that uses google forms and text files to track weekly picks
 
 Features hash maps, string manipulation, 2d arrays, web scraping, web automation, file processing
 
@@ -16,3 +16,8 @@ example:
 Week 1
 
 John ravens steelers bengals browns ...
+
+The sendDMs function will message accounts specified by the username array passed in. You will also need to 
+provide the forms url which you can get by using "url = form()" as form returns the url to the form it creates.
+You can then pass in the username array and the url which sends the url to all users in the array. You must also
+have selenium working with python and chromedriver.
