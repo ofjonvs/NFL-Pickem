@@ -33,7 +33,7 @@ def createSchedule(scheduleFile):
                 schedule[i-1].append(currentGame)
     return schedule
 
-def sundayForm(week, chatName, chat, linesFile):
+def sundayForm(week, users, linesFile):
     schedule = createSchedule()
     lines = {}
     f = open(linesFile, 'r')
@@ -45,7 +45,7 @@ def sundayForm(week, chatName, chat, linesFile):
         lines[line[0].capitalize()] = line[1]
 
     usernames = []
-    for username in chat:
+    for username in users:
         usernames.append({"value":username})
     print(usernames)
 
@@ -64,7 +64,7 @@ def sundayForm(week, chatName, chat, linesFile):
     # Request body for creating a form
     form = {
         "info": {
-            "title": chatName + " " + "Week " + str(week),
+            "title": "Week " + str(week),
         },
     }
 
@@ -205,9 +205,4 @@ def sendDMs (usernames, url, loginUsername, loginPassword):
         dm = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[1]/section/div/div[2]/div/div/div[2]/div[2]/div/div[2]/div/div/div[2]/textarea')
         dm.send_keys(url)
         dm.send_keys(Keys.ENTER)
-
-
-def automate(username, password, chat, tnf):
-    url = sundayForm()
-    sendDMs(chat, url, username, password)
  
