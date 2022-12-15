@@ -57,3 +57,6 @@ colts 2.5
 bills 11
 
 bengals 3.5
+
+
+Update 12/15: All file processing is automated through web scraping or other method.
